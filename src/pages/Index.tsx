@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import poolImg from "@/assets/pool-real.jpg";
 import gardenImg from "@/assets/garden-real.jpg";
 import heroImg from "@/assets/pool-real.jpg";
+import bedroomImg from "@/assets/bedroom1-real.jpg";
 
 const features = [
   { icon: Wifi, title: "Fast WiFi", desc: "High-speed internet throughout" },
@@ -81,7 +82,7 @@ const Index = () => (
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src={poolImg} alt="Swimming pool at night" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
+            <img src={bedroomImg} alt="Master bedroom" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
             <img src={gardenImg} alt="Garden with string lights" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
           </div>
         </div>
