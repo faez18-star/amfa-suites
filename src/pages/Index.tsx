@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import poolImg from "@/assets/pool-real.jpg";
 import gardenImg from "@/assets/garden-real.jpg";
 import heroImg from "@/assets/pool-real.jpg";
+import bedroomImg from "@/assets/bedroom1-real.jpg";
 
 const features = [
   { icon: Wifi, title: "Fast WiFi", desc: "High-speed internet throughout" },
