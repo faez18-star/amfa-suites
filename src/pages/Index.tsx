@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero.jpg";
-import bedroom1Img from "@/assets/bedroom1.jpg";
-import poolImg from "@/assets/pool.jpg";
+import poolImg from "@/assets/pool-real.jpg";
+import gardenImg from "@/assets/garden-real.jpg";
+import heroImg from "@/assets/pool-real.jpg";
 
 const features = [
   { icon: Wifi, title: "Fast WiFi", desc: "High-speed internet throughout" },
