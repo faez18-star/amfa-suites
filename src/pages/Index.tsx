@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero.jpg";
-import bedroom1Img from "@/assets/bedroom1.jpg";
-import poolImg from "@/assets/pool.jpg";
+import poolImg from "@/assets/pool-real.jpg";
+import gardenImg from "@/assets/garden-real.jpg";
+import heroImg from "@/assets/pool-real.jpg";
 
 const features = [
   { icon: Wifi, title: "Fast WiFi", desc: "High-speed internet throughout" },
@@ -81,8 +81,8 @@ const Index = () => (
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <img src={bedroom1Img} alt="Master bedroom" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
-            <img src={poolImg} alt="Swimming pool" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
+            <img src={poolImg} alt="Swimming pool at night" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
+            <img src={gardenImg} alt="Garden with string lights" className="rounded-lg object-cover w-full h-64 shadow-[var(--shadow-elevated)]" loading="lazy" width={1024} height={768} />
           </div>
         </div>
       </div>
