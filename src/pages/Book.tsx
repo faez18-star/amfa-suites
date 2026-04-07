@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import Layout from "@/components/Layout";
 
 const NIGHTLY_RATE = 120000;
-const CLEANING_FEE = 15000;
+const CAUTION_FEE = 15000;
 const SERVICE_FEE = 10000;
 
 const Book = () => {
