@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, Star } from "lucide-react";
+import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, Star, ShieldCheck, Car, Tv, AirVent, BedDouble, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import poolImg from "@/assets/pool-real.jpg";
@@ -13,6 +13,21 @@ const features = [
   { icon: Waves, title: "Swimming Pool", desc: "Refreshing pool access" },
   { icon: UtensilsCrossed, title: "Kitchenette", desc: "Fully equipped kitchen" },
   { icon: TreePine, title: "Garden", desc: "Beautiful private garden" },
+];
+
+const offerings = [
+  { icon: BedDouble, title: "2 Luxury Bedrooms", desc: "Spacious, elegantly furnished bedrooms with premium bedding and blackout curtains for the perfect night's rest." },
+  { icon: Waves, title: "Private Swimming Pool", desc: "Take a refreshing dip in our beautifully lit private pool — available day and night for your exclusive enjoyment." },
+  { icon: UtensilsCrossed, title: "Fully Equipped Kitchenette", desc: "Cook your favourite meals in our modern kitchenette stocked with cookware, utensils, and a refrigerator." },
+  { icon: Zap, title: "24/7 Power Supply", desc: "Enjoy uninterrupted electricity with our dedicated power backup system — no generator noise, just seamless comfort." },
+  { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected with fast, reliable internet throughout the property — perfect for remote work or streaming." },
+  { icon: AirVent, title: "Air Conditioning", desc: "Every room is climate-controlled with modern split-unit air conditioners for your comfort in any weather." },
+  { icon: Tv, title: "Smart TV Entertainment", desc: "Enjoy Netflix, YouTube, and cable channels on large smart TVs in the living room and bedrooms." },
+  { icon: ShieldCheck, title: "24/7 Security", desc: "Rest easy with round-the-clock security personnel and CCTV surveillance keeping you and your belongings safe." },
+  { icon: Car, title: "Free Parking", desc: "Secure, gated parking space is available for your vehicle at no extra cost during your stay." },
+  { icon: TreePine, title: "Lush Garden & Outdoor Area", desc: "Relax in our beautifully landscaped garden with ambient lighting — perfect for evening gatherings." },
+  { icon: Clock, title: "Flexible Check-in/Check-out", desc: "We accommodate flexible arrival and departure times to fit your travel schedule — just let us know in advance." },
+  { icon: Star, title: "Personalized Service", desc: "Our dedicated team ensures your stay is perfect with prompt responses and attention to every detail." },
 ];
 
 const Index = () => (
@@ -43,7 +58,7 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Features */}
+    {/* Features quick strip */}
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
@@ -62,8 +77,29 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Preview */}
+    {/* What We Offer */}
     <section className="py-20 bg-secondary">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14">
+          <h2 className="section-heading mb-3">What We Offer</h2>
+          <p className="section-subheading mx-auto">A complete luxury experience designed for your comfort and convenience</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offerings.map((o) => (
+            <div key={o.title} className="bg-card rounded-lg p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow group">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <o.icon className="text-primary" size={24} />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-card-foreground mb-2">{o.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{o.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Preview */}
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
