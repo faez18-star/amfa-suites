@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="grid md:grid-cols-3 gap-8">
         <div>
-          <h3 className="font-display text-2xl font-bold mb-3">Amfa Suites</h3>
+          <img src="/favicon.png" alt="Amfa Suites logo" className="h-10 w-auto mb-3 brightness-0 invert" />
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             Your luxury 2-bedroom suite with premium amenities. Experience comfort like never before.
           </p>
