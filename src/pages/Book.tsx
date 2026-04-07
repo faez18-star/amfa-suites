@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import Layout from "@/components/Layout";
 
 const NIGHTLY_RATE = 120000;
-const CLEANING_FEE = 15000;
+const CAUTION_FEE = 15000;
 const SERVICE_FEE = 10000;
 
 const Book = () => {
@@ -26,7 +26,7 @@ const Book = () => {
 
   const nights = checkIn && checkOut ? Math.max(differenceInDays(checkOut, checkIn), 0) : 0;
   const subtotal = nights * NIGHTLY_RATE;
-  const total = subtotal > 0 ? subtotal + CLEANING_FEE + SERVICE_FEE : 0;
+  const total = subtotal > 0 ? subtotal + CAUTION_FEE + SERVICE_FEE : 0;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -149,8 +149,8 @@ const Book = () => {
                   <span className="text-card-foreground font-medium">₦{subtotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Cleaning fee</span>
-                  <span className="text-card-foreground font-medium">₦{CLEANING_FEE.toLocaleString()}</span>
+                  <span className="text-muted-foreground">Caution fee</span>
+                  <span className="text-card-foreground font-medium">₦{CAUTION_FEE.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Service fee</span>
