@@ -149,7 +149,7 @@ const Book = () => {
                   <span className="text-card-foreground font-medium">₦{subtotal.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Cleaning fee</span>
+                  <span className="text-muted-foreground">Caution fee</span>
                   <span className="text-card-foreground font-medium">₦{CLEANING_FEE.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
