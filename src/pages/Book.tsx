@@ -25,7 +25,7 @@ const Book = () => {
 
   const nights = checkIn && checkOut ? Math.max(differenceInDays(checkOut, checkIn), 0) : 0;
   const subtotal = nights * NIGHTLY_RATE;
-  const total = subtotal > 0 ? subtotal + CAUTION_FEE + SERVICE_FEE : 0;
+  const total = subtotal > 0 ? subtotal + CAUTION_FEE : 0;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
