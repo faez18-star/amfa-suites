@@ -10,6 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
+import { supabase } from "@/integrations/supabase/client";
 
 const NIGHTLY_RATE = 120000;
 const CAUTION_FEE = 20000;
@@ -22,19 +23,41 @@ const Book = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const nights = checkIn && checkOut ? Math.max(differenceInDays(checkOut, checkIn), 0) : 0;
   const subtotal = nights * NIGHTLY_RATE;
   const total = subtotal > 0 ? subtotal + CAUTION_FEE : 0;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !phone || !checkIn || !checkOut || nights < 1) {
       toast.error("Please fill in all fields and select valid dates.");
       return;
     }
-    setSubmitted(true);
-    toast.success("Booking request submitted! We'll contact you shortly.");
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke("submit-booking", {
+        body: {
+          name,
+          email,
+          phone,
+          guests,
+          checkIn: format(checkIn, "PPP"),
+          checkOut: format(checkOut, "PPP"),
+          nights,
+          total,
+        },
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success("Booking request submitted! We'll contact you shortly.");
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong submitting your booking. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -134,8 +157,8 @@ const Book = () => {
                 </div>
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-base">
-                Confirm Booking
+              <Button type="submit" size="lg" disabled={loading} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-base">
+                {loading ? "Submitting..." : "Confirm Booking"}
               </Button>
             </form>
 
