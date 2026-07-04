@@ -20,8 +20,9 @@ const Footer = () => (
         </div>
         <div>
           <h4 className="font-display text-lg font-semibold mb-3">Contact</h4>
-          <p className="text-primary-foreground/70 text-sm">info@amfasuites.com</p>
-          <p className="text-primary-foreground/70 text-sm mt-1">+234 800 000 0000</p>
+          <a href="mailto:zulaimusa@gmail.com" className="block text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors">zulaimusa@gmail.com</a>
+          <a href="tel:08138954043" className="block text-primary-foreground/70 hover:text-primary-foreground text-sm mt-1 transition-colors">08138954043</a>
+          <p className="text-primary-foreground/70 text-sm mt-1 leading-relaxed">Abuja, Idu Ochacho Estate, 6th King Muhammad Adah Street</p>
         </div>
       </div>
       <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-primary-foreground/50 text-sm">
