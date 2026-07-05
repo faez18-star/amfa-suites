@@ -101,22 +101,72 @@ const About = () => (
 
     {/* House Rules */}
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-2xl">
+      <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="section-heading text-center mb-10">House Rules</h2>
-        <div className="space-y-4">
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
           {[
-            ["Check-in", "From 2:00 PM"],
-            ["Check-out", "By 12:00 PM"],
-            ["Max Guests", "6"],
-            ["Pets", "Not allowed"],
-            ["Smoking", "Not allowed indoors"],
-            ["Parties", "No parties or events"],
-          ].map(([rule, detail]) => (
-            <div key={rule} className="flex justify-between items-center border-b border-border pb-3">
-              <span className="font-medium text-foreground">{rule}</span>
-              <span className="text-muted-foreground">{detail}</span>
+            { icon: CigaretteOff, label: "No smoking indoors" },
+            { icon: UsersRound, label: "Max guests: 8" },
+            { icon: Dog, label: "No pets allowed" },
+            { icon: Clock, label: "24/7 check-in" },
+            { icon: PartyPopper, label: "No parties" },
+            { icon: Ban, label: "No reckless behaviour" },
+          ].map((r) => (
+            <div key={r.label} className="bg-card rounded-lg p-4 flex items-center gap-3 shadow-[var(--shadow-card)]">
+              <r.icon className="text-primary shrink-0" size={22} />
+              <span className="text-card-foreground text-sm font-medium">{r.label}</span>
             </div>
           ))}
+        </div>
+
+        <div className="bg-card rounded-lg p-6 md:p-8 shadow-[var(--shadow-elevated)] space-y-6 text-muted-foreground leading-relaxed">
+          <p>
+            The daily rent is ₦100,000 and payable in advance after booking confirmation. In case of any extended period of stay, it should be paid before the extending day.
+          </p>
+          <p>
+            A copy of valid identification should be submitted at check-in.
+          </p>
+          <p>
+            <strong className="text-foreground">Amfa Suites</strong> shall pay for all utilities — water, gas, electricity, and internet — with the following allowance caps:
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>Gas should last a month.</li>
+            <li>Electricity use: 40 units per day.</li>
+            <li>Internet use: 10GB per day.</li>
+          </ul>
+          <p>
+            Anything above the allowance cap is the <strong className="text-foreground">Tenant's</strong> responsibility. Any overages will be invoiced and deducted from your caution fee.
+          </p>
+          <p>
+            The apartment shall be cleaned based on your request for cleaning, and you must be present while the cleaner cleans, as the lessor will not be responsible for any personal property loss.
+          </p>
+          <p>
+            Tenants are not allowed to have pets.
+          </p>
+          <p>
+            No smoking indoors. Any damage caused by smoking to the unit or furnishings will be billed to the tenant upon vacating the apartment.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>The swimming pool has no present lifeguard; only learned swimmers are advised to use the pool.</li>
+            <li>Check-out time is 12 noon. If checking out after 12 noon, you will need to notify the lessor ahead of time.</li>
+            <li>
+              If you cancel your reservation <strong className="text-foreground">before 48 hours</strong> to the booked date, you will be fully refunded your deposit.
+              <ul className="list-disc pl-5 mt-2 space-y-2">
+                <li>If you cancel <strong className="text-foreground">48 hours</strong> to the booked date, 5% of the required amount will be deducted from your deposit or paid.</li>
+                <li>If you cancel <strong className="text-foreground">24 hours</strong> to, or on the booked date, 10% of the required amount will be deducted from your deposit or paid.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            In situations where the tenant decides to use the outdoor space for parties, birthdays, and other outdoor events that accommodate more than 6 people, an extra charge of ₦50,000 per day will apply.
+          </p>
+          <p>
+            No loud music later than 10 PM.
+          </p>
+          <p className="text-sm pt-4 border-t border-border">
+            In addition to the provisions set forth above, tenants hereby agree that residency shall be governed by all agreements as set forth on this page. Tenant hereby certifies and agrees that all residents signing this lease agreement have fully examined, read, and understood the lease agreement.
+          </p>
         </div>
       </div>
     </section>
