@@ -1,4 +1,4 @@
-import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, BedDouble, Bath, Car, ShieldCheck, Clock, Users, AirVent } from "lucide-react";
+import { Wifi, Zap, Waves, UtensilsCrossed, TreePine, BedDouble, Bath, Car, ShieldCheck, Clock, Users, AirVent, Ban, CigaretteOff, Dog, Volume2, UsersRound, PartyPopper } from "lucide-react";
 import Layout from "@/components/Layout";
 import bedroom1Img from "@/assets/bedroom1-real.jpg";
 import bedroom2Img from "@/assets/bedroom3-real.jpg";
